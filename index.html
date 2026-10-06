@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Campus Event Registration Desk</title>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<div class="marq"><div id="mq"></div></div>
+<main class="wrap">
+<section class="hero">
+ <div>
+  <h1>Campus Event <span>Registration</span> Desk</h1>
+  <p>No more chasing the coordinator. Pick an event, fill the form, get a confirmation instantly. Our three very serious coordinators are watching.</p>
+  <div class="row"><button class="btn" onclick="document.getElementById('f').scrollIntoView({behavior:'smooth'})">Register now</button>
+  <button class="btn alt" onclick="boop()">Poke the coordinators</button></div>
+ </div>
+ <div class="crew" aria-label="The coordinators">
+  <div class="slot p1"><div class="pol" data-say="Name? Register number? Quick, quick!"><span class="say"></span><img src="images/coordinator-1.jpg" alt="Coordinator one in a grey polo"><b>Head of Forms</b></div></div>
+  <div class="slot p2"><div class="pol" data-say="This sign means: seats are filling!"><span class="say"></span><img src="images/coordinator-2.jpg" alt="Coordinator two making a hand sign"><b>Chief Hand Signals</b></div></div>
+  <div class="slot p3"><div class="pol" data-say="Smile, you are registered!"><span class="say"></span><img src="images/coordinator-3.jpg" alt="Coordinator three smiling selfie"><b>Selfie Supervisor</b></div></div>
+ </div>
+</section>
+
+<section class="grid">
+ <form class="box" id="f" novalidate>
+  <h2>Grab your seat</h2>
+  <label for="ev">Event</label><select id="ev"></select>
+  <label for="nm">Name</label><input id="nm" autocomplete="name"><div class="err" id="e1"></div>
+  <label for="rn">Register number</label><input id="rn" inputmode="numeric" placeholder="8 to 12 digits"><div class="err" id="e2"></div>
+  <label for="dp">Department</label><input id="dp" placeholder="e.g. CSE"><div class="err" id="e3"></div>
+  <div class="row"><button class="btn" type="submit">Register</button><button class="btn alt" type="button" id="rs">Reset</button></div>
+  <div class="ok" id="ok" role="status"></div>
+ </form>
+ <div>
+  <div class="box">
+   <h2>Events</h2>
+   <div class="tools">
+    <input id="q" placeholder="Search events..." aria-label="Search events">
+    <button class="chip on" data-f="all">All</button><button class="chip" data-f="avail">Show Available Events</button><button class="chip" data-f="full">Show Full Events</button>
+   </div>
+   <div class="events" id="events"></div>
+  </div>
+  <div class="box" style="margin-top:22px">
+   <h2>My Registrations</h2>
+   <ul class="regs" id="regs"></ul>
+  </div>
+ </div>
+</section>
+</main>
+<footer>JavaScript builds the cards, bars, messages and confetti live. HTML and CSS change on every click, no reload needed.</footer>
+
+<script src="script.js"></script></body></html>
